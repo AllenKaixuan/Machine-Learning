@@ -39,7 +39,7 @@ def compute_statistics(data, testdata, fractions, n_runs=10):
     
     return means, stds
 
-n_runs = 10
+n_runs = 100
 fraction = [0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 Accuracy_1 = []
 Accuracy_3 = []
@@ -72,12 +72,18 @@ plt.figure(figsize=(12, 6))
 plt.errorbar(fraction, means1, yerr=stds1, fmt='o-', label='Monk1')
 plt.errorbar(fraction, means3, yerr=stds3, fmt='o-', label='Monk3')
 
+# Add text annotations for mean values
+for i, (f, m1, m3) in enumerate(zip(fraction, means1, means3)):
+    plt.text(f, m1+0.02, f'{m1:.3f}', ha='center', va='bottom', color='blue')
+    plt.text(f, m3-0.02, f'{m3:.3f}', ha='center', va='top', color='orange')
+
 plt.xlabel('Training Set Fraction')
 plt.ylabel('Accuracy')
 plt.title('Mean Accuracy vs Training Fraction (with standard deviation)')
 plt.legend()
 plt.grid(True)
 plt.show()
+
 
 # assignment 6
 # pruning will reduce the complexity of the tree, which will reduce the overfitting, and increase the generalization ability of the tree
