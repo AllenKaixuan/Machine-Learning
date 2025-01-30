@@ -68,7 +68,9 @@ print(f"MONK-2 Test Error: {test_error_2 * 100:.2f}%")
 print(f"MONK-3 Train Error: {train_error_3 * 100:.2f}%")
 print(f"MONK-3 Test Error: {test_error_3 * 100:.2f}%")
 
-draw.drawTree(tree_1)
+# draw.drawTree(tree_1)
+# draw.drawTree(tree_2)
+draw.drawTree(tree_3)
 
 #MONK-1 Train Error: 0.00%
 #MONK-1 Test Error: 17.13%
@@ -77,5 +79,7 @@ draw.drawTree(tree_1)
 #MONK-3 Train Error: 0.00%
 #MONK-3 Test Error: 5.56%
 
-#MONK-3 has the lowest test error, which means it is the best tree，because for the first node it has the highest information gain
-#MONK-1 has the lowest test error, which means it is the best tree, because for the first node it has the lowest information gain
+# MONK-3 has the lowest test error (5.56%), making it the best tree. 
+# This is because its underlying rule structure is relatively simple for a decision tree to learn, 
+# despite the 5% noise in the training set. In contrast, MONK-2's rule involves counting exactly two attributes being 1, 
+# which is harder for a decision tree to capture, leading to severe overfitting and a high test error (30.79%).
