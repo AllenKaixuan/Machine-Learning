@@ -140,7 +140,7 @@ def minimize_objective(inputs, targets, N, C):
 if __name__ == "__main__":
     cases = ['easy', 'hard', 'harder']
     # cases = ['hard']
-    C_seq = [1, 5, 10]
+    C_seq = [1, 2, 5]
     # C_seq = [5]
     for C in C_seq:
         for case in cases:
